@@ -166,7 +166,7 @@
 
         <h2>Agendar Cita de Mantenimiento</h2>
         <p class="texto-centro" style="margin-bottom: 30px;">
-            Selecciona la fecha, hora y el tipo de servicio que deseas para tu computador.
+            Selecciona tu fecha, elige el horario disponible y el tipo de servicio que deseas.
         </p>
 
         <form id="formCita" onsubmit="agendarCita(event)">
@@ -207,12 +207,27 @@
                 <option value="Correctivo">Mantenimiento Correctivo</option>
             </select>
 
-            <label for="fechaCita" style="color: var(--texto-suave); font-size: 15px; text-align: left;">Fecha y Hora de la cita:</label>
+            <label for="fechaCita" style="color: var(--texto-suave); font-size: 15px; text-align: left;">Fecha de la cita:</label>
             <input
-                type="datetime-local"
+                type="date"
                 id="fechaCita"
                 required
             >
+
+            <label for="horaCita" style="color: var(--texto-suave); font-size: 15px; text-align: left;">Hora disponible:</label>
+            <select id="horaCita" required style="padding: 15px; background: rgba(2, 5, 15, 0.7); color: var(--texto); border: 1px solid var(--borde); border-radius: 3px; font-family: var(--fuente-texto); font-size: 16px;">
+                <option value="" disabled selected>Selecciona una hora...</option>
+                <!-- Jornada Mañana -->
+                <option value="09:00 AM">09:00 AM</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="11:00 AM">11:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <!-- Jornada Tarde -->
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="04:00 PM">04:00 PM</option>
+                <option value="05:00 PM">05:00 PM</option>
+            </select>
 
             <button type="submit">
                 Confirmar Cita
@@ -221,7 +236,6 @@
         </form>
 
     </section>
-
 
     <!-- =========================
          GALERÍA
