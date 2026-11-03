@@ -1,1 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>NEXA PC | Plantilla Web</title>
+
+    <!-- Conexión con CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+    <header>
+
+        <div class="logo">
+            NEXA PC
+        </div>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#mantenimiento">Mantenimiento</a>
+            <a href="#agendar">Agendar Cita</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         SECCIÓN PRINCIPAL
+    ========================== -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-text">
+
+            <h1>Bienvenido a NEXA PC</h1>
+
+            <p>
+                💻 Mantenimiento y optimización de PC
+                ⚡ Más rendimiento, menos problemas
+                🛠️ Tu PC, como nueva.
+            </p>
+
+            <button onclick="mostrarMensaje()">
+                Conocer más
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOSOTROS
+    ========================== -->
+    <section id="nosotros" class="section">
+
+        <h2>Sobre Nosotros</h2>
+
+        <p class="texto-centro">
+            Somos un servicio dedicado al mantenimiento y optimización de computadores. Nos encargamos de mejorar el rendimiento de tu PC, eliminar archivos innecesarios y mantener tu equipo funcionando de la mejor manera.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         SERVICIOS
+    ========================== -->
+    <section id="servicios" class="section fondo">
+
+        <h2>Servicios</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🧹 Limpieza PC</h3>
+                <p>
+                    Eliminamos archivos innecesarios y realizamos una limpieza general.
+                </p>
+
+                <button onclick="mostrarServicio('Eliminamos archivos innecesarios y realizamos una limpieza general para mantener tu PC en buen estado.')">
+                    Ver más
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>⚡ Optimización del sistema</h3>
+                <p>
+                    Mejoramos el rendimiento y hacemos que tu PC funcione más rápido.
+                </p>
+
+                <button onclick="mostrarServicio('Ajustamos tu sistema para mejorar el rendimiento, la velocidad y la respuesta del equipo.')">
+                    Ver más
+                </button>
+            </div>
+
+
+            <div class="card">
+                <h3>🎮 Optimización para gaming</h3>
+                <p>
+                    Configuramos tu PC para obtener un mejor rendimiento en tus juegos.
+                </p>
+
+                <button onclick="mostrarServicio('Optimizamos tu PC para obtener un mejor rendimiento y una experiencia de juego más fluida.')">
+                    Ver más
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TIPOS DE MANTENIMIENTO DE COMPUTADORES
+    ========================== -->
+    <section id="mantenimiento" class="section">
+
+        <h2>Tipos de Mantenimiento de Computadores</h2>
+        <p class="texto-centro" style="margin-bottom: 40px;">
+            Conoce las diferentes modalidades de mantenimiento que ofrecemos para alargar la vida útil y potenciar el rendimiento de tu equipo.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🛠️ Mantenimiento Preventivo Físico</h3>
+                <p>
+                    Limpieza profunda interna de componentes, cambio de pasta térmica, eliminación de polvo en ventiladores y revisión de conexiones de hardware.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Mantenimiento Preventivo Lógico</h3>
+                <p>
+                    Desfragmentación de discos, actualización del sistema operativo, limpieza de registros y optimización de programas de inicio.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Mantenimiento Correctivo</h3>
+                <p>
+                    Reparación o sustitución de piezas dañadas (discos duros, fuentes, memoria RAM), eliminación de virus y formateo general del sistema.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALENDARIO / AGENDAR CITA
+    ========================== -->
+    <section id="agendar" class="section fondo">
+
+        <h2>Agendar Cita de Mantenimiento</h2>
+        <p class="texto-centro" style="margin-bottom: 30px;">
+            Selecciona la fecha, hora y el tipo de servicio que deseas para tu computador.
+        </p>
+
+        <form id="formCita" onsubmit="agendarCita(event)">
+
+            <input
+                type="text"
+                id="citaNombre"
+                placeholder="Nombre"
+                required
+            >
+
+            <input
+                type="text"
+                id="citaApellido"
+                placeholder="Apellido"
+                required
+            >
+
+            <input
+                type="tel"
+                id="citaTelefono"
+                placeholder="Número telefónico"
+                required
+            >
+
+            <input
+                type="email"
+                id="citaCorreo"
+                placeholder="Correo electrónico"
+                required
+            >
+
+            <label for="tipoMantenimiento" style="color: var(--texto-suave); font-size: 15px; text-align: left;">Tipo de Mantenimiento:</label>
+            <select id="tipoMantenimiento" required style="padding: 15px; background: rgba(2, 5, 15, 0.7); color: var(--texto); border: 1px solid var(--borde); border-radius: 3px; font-family: var(--fuente-texto); font-size: 16px;">
+                <option value="" disabled selected>Selecciona un servicio...</option>
+                <option value="Preventivo Físico">Mantenimiento Preventivo Físico</option>
+                <option value="Preventivo Lógico">Mantenimiento Preventivo Lógico</option>
+                <option value="Correctivo">Mantenimiento Correctivo</option>
+            </select>
+
+            <label for="fechaCita" style="color: var(--texto-suave); font-size: 15px; text-align: left;">Fecha y Hora de la cita:</label>
+            <input
+                type="datetime-local"
+                id="fechaCita"
+                required
+            >
+
+            <button type="submit">
+                Confirmar Cita
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         GALERÍA
+    ========================== -->
+    <section id="galeria" class="section">
+
+        <h2>NUESTRO TRABAJO</h2>
+
+        <div class="galeria">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxu6M4sAC8sEqVLhrkxIQf6sPByHzBpTWv9er40t4peWz6Tfap0Kg3aIGJ&s=10"
+                alt="Imagen 1"
+                onclick="ampliarImagen(this)"
+            >
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ-0ZUJRfA9QvsrqkgSyDNz3b9iXrHIdd0s8zHpeATcw&s=10"
+                alt="Imagen 2"
+                onclick="ampliarImagen(this)"
+            >
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG88pQyUsSMi5HJsOOXsFPgBHfdZzC3kCnTSZw1zY0VA&s=10"
+                alt="Imagen 3"
+                onclick="ampliarImagen(this)"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALCULADORA
+    ========================== -->
+    <section class="section fondo">
+
+        <h2>Calculadora</h2>
+
+        <div class="calculadora">
+
+            <input
+                type="number"
+                id="numero1"
+                placeholder="Número 1"
+            >
+
+            <input
+                type="number"
+                id="numero2"
+                placeholder="Número 2"
+            >
+
+            <div class="botones-calculadora">
+
+                <button onclick="sumar()">
+                    +
+                </button>
+
+                <button onclick="restar()">
+                    -
+                </button>
+
+                <button onclick="multiplicar()">
+                    ×
+                </button>
+
+                <button onclick="dividir()">
+                    ÷
+                </button>
+
+            </div>
+
+            <h3 id="resultado">
+                Resultado: 0
+            </h3>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+    <section id="contacto" class="section">
+
+        <h2>Contacto</h2>
+
+        <form onsubmit="enviarFormulario(event)">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre"
+                required
+            >
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="Correo electrónico"
+                required
+            >
+
+            <textarea
+                id="mensaje"
+                placeholder="Escribe tu mensaje"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Enviar
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+    <footer>
+
+        <p>
+            © 2026 NEXA PC - LA PAGINA MAS CHIMBA 
+        </p>
+
+        <p>
+            Página creada con HTML, CSS y JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- Conexión con JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
