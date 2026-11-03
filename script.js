@@ -191,12 +191,14 @@ function agendarCita(evento) {
     let correo = document.getElementById("citaCorreo").value;
     let mantenimiento = document.getElementById("tipoMantenimiento").value;
     let fecha = document.getElementById("fechaCita").value;
+    let hora = document.getElementById("horaCita").value;
 
     alert(
         "¡Cita agendada con éxito!\n\n" +
         "Cliente: " + nombre + " " + apellido + "\n" +
         "Servicio: " + mantenimiento + "\n" +
-        "Fecha y Hora: " + fecha + "\n" +
+        "Fecha: " + fecha + "\n" +
+        "Hora: " + hora + "\n" +
         "Te hemos enviado los detalles a: " + correo
     );
 
@@ -206,7 +208,9 @@ function agendarCita(evento) {
     console.log("Correo:", correo);
     console.log("Servicio:", mantenimiento);
     console.log("Fecha:", fecha);
+    console.log("Hora:", hora);
 
     // Limpiar formulario de citas
     document.getElementById("formCita").reset();
+}
 }
